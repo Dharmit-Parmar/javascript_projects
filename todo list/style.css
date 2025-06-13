@@ -6,13 +6,37 @@
     }
 
     body {
-      background: linear-gradient(to right, #1f4037, #99f2c8);
+      background: linear-gradient(to right, #34ffc9, #84ffc6b4);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+      height: 30%;
+      border-radius: 50%;
+      filter: blur(100px);
+      background: linear-gradient(to right, #2d9ae294, #bbef12b5);
+      backdrop-filter: blur(10px);
+    }
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      height: 30%;
+      border-radius: 50%;
+      filter: blur(110px);
+      background: linear-gradient(to right, #2802ff70, #ff000092);
+      backdrop-filter: blur(10px);
     }
 
 .notification{
@@ -54,28 +78,29 @@
       width: 100%;
       max-width: 400px;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.764);
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.882),
+                  -10px -5px 15px rgb(225, 225, 225);
       padding: 20px;
       animation: fadeIn 0.6s ease;
     }
-
+    
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
+    
     h1 {
       text-align: center;
       margin-bottom: 15px;
       color: #333;
     }
-
+    
     .input-group {
       display: flex;
       gap: 10px;
       margin-bottom: 20px;
     }
-
+    
     input[type="text"] {
       flex: 1;
       padding: 10px;
@@ -84,12 +109,12 @@
       font-size: 16px;
       transition: 0.3s;
     }
-
+    
     input[type="text"]:focus {
       border-color: #4caf50;
       outline: none;
     }
-
+    
     button {
       padding: 10px 15px;
       background-color: #4caf50;
@@ -100,16 +125,17 @@
       cursor: pointer;
       transition: 0.3s;
     }
-
+    
     button:hover {
       background-color: #388e3c;
     }
-
+    
     ul {
       width: 100%;
       max-height: 200px;
       list-style: none;
       padding: 0;
+      overflow-y: auto;
     }
 
     li {

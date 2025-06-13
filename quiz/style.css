@@ -16,7 +16,33 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  position: relative;
 }
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  filter: blur(100px);
+  background: linear-gradient(to right, #e2e22d, #ef12dd);
+  backdrop-filter: blur(10px);
+}
+body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  filter: blur(110px);
+  background: linear-gradient(to right, #ffc802d4, #ff0000d1);
+  backdrop-filter: blur(10px);
+}
+
 
 .quiz-container {
   background: white;
@@ -24,7 +50,8 @@ body {
   border-radius: 15px;
   max-width: 500px;
   width: 100%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.601) ,
+              -5px -5px 15px rgb(152, 152, 152);
   animation: fadeIn 0.4s ease;
 }
 
