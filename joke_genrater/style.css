@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Fjalla+One&family=Lugrasimo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  background: linear-gradient(120deg, #fdd985 0%, #eafb01 100%);
+  background-size: 200% 200%;
+  animation: bgmove 8s ease-in-out infinite;
+}
+
+@keyframes bgmove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.joke-box {
+  width: calc(100dvw - 20rem);
+  max-width: 40rem;
+  
+  min-width: 20rem;
+  min-height: 320px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 #eafb01a0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 2rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  transition: box-shadow 0.3s;
+}
+
+.joke-box::before,
+.joke-box::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.joke-box::before {
+  top: -18%;
+  left: -10%;
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(135deg, #ffe259cc 0%, #ffa751cc 100%);
+}
+
+.joke-box::after {
+  bottom: -18%;
+  right: -10%;
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(135deg, #4ffe1acc 0%, #eafb01cc 100%);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Oswald", "Montserrat", sans-serif;
+  color: #ff8400;
+  letter-spacing: 1px;
+  text-shadow: 1px 2px 8px #fff7, 0 1px 0 #eafb01a0;
+  z-index: 1;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+#joke {
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: none;
+  padding: 1rem;
+  color: #222;
+  font-weight: 500;
+  font-family: "Agdasima", "Montserrat", sans-serif;
+  background: rgba(255,255,255,0.45);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 #eafb0130;
+  z-index: 1;
+  min-height: 3.5rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+#btn , #btn-quote {
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #ff8400 60%, #ff4800 100%);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 #ff840055;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+#btn:hover, #btn:focus {
+  background: linear-gradient(90deg, #ff4800 60%, #ff8400 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px 0 #ff840099;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .joke-box {
+    max-width: 95vw;
+    min-height: 220px;
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    border-radius: 1.2rem;
+    gap: 1.2rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+  #joke {
+    font-size: 1rem;
+    padding: 0.7rem 0.2rem;
+    min-height: 2.2rem;
+  }
+  #btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 1.2rem;
+  }
+  .joke-box::before,
+  .joke-box::after {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+
+#quote-text {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1rem;
+  color: #222;
+  font-weight: 500;
+  font-family: "Agdasima", "Montserrat", sans-serif;
+  background: rgba(255,255,255,0.45);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 #eafb0130;
+  z-index: 1;
+  min-height: 3.5rem;
+  transition: background 0.3s, color 0.3s;
+  line-height: 1.6;
+}
+
+#author {
+  margin-top: -0.8rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: #333;
+  font-family: "Oswald", "Montserrat", sans-serif;
+  z-index: 1;
+}
+
+
+
