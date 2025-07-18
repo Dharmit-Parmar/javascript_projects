@@ -86,13 +86,15 @@ let num = 0;
 let isccorect = 0;
 
 
-
+document.addEventListener("DOMContentLoaded", function() {
+  score.textContent = num;
+  loadStorage();
+});
 function game_start() {
    
   question();
   if (isccorect == 1) {
     arr_options.forEach(element => {
-      score.textContent = num;
       arr_options.forEach(element => {
         element.disabled = false;
         element.style.border = "1px solid black";
@@ -159,9 +161,36 @@ exit.addEventListener("click", function () {
   question_html.textContent = `Good! your score is ${score.textContent}`;
   exit.style.display = "none";
   btn.innerHTML = "Retry";
-   num = 0;
+    
   score.textContent = num;
   isccorect = 0;
   parent_option.style.display = "none";
+  loadStorage();
+   
 })
 
+
+
+
+
+ async function loadStorage( ) {
+
+  let data = {
+    score : num,
+    highscore : 0 
+  }
+
+  let storage = await localStorage.getItem("quizData");
+  if (storage) {
+    let parsedData = await JSON.parse(storage);
+    data.highscore = parsedData.highscore;
+    score.textContent = parsedData.highscore;
+  }
+  if (data.score >  data.highscore) {
+    data.highscore = data.score;
+  }
+  await localStorage.setItem("quizData", JSON.stringify(data));
+  console.log("Data saved to localStorage:", data); 
+
+
+ }
