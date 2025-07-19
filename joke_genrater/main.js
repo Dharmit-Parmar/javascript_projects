@@ -46,3 +46,4 @@ btn.onclick = function () {
 btnquote.onclick = function(){
     quteGenrate();
 }
+

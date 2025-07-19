@@ -84,6 +84,7 @@ let arr_options = Array.from(child_option);
 let exit = document.getElementById("Exit");
 let num = 0;
 let isccorect = 0;
+let highscoreDisplay = document.getElementById("highscoreDisplay");
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -184,7 +185,8 @@ exit.addEventListener("click", function () {
   if (storage) {
     let parsedData = await JSON.parse(storage);
     data.highscore = parsedData.highscore;
-    score.textContent = parsedData.highscore;
+    score.textContent = parsedData.score;
+    highscoreDisplay.textContent = parsedData.highscore;  
   }
   if (data.score >  data.highscore) {
     data.highscore = data.score;
