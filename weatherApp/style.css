@@ -1,0 +1,126 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;  
+}
+
+body {
+    background: #0d1b2a ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+ 
+.weather-app {
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.search-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.search-container input {
+    flex: 1;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 0 25px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-container button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.search-container button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+ 
+.weather-display {
+    margin-top: 30px;
+}
+
+.weather-icon {
+    width: 170px;
+    margin-top: 10px;
+}
+
+.temperature {
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.city {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+    padding:1rem ;
+    text-transform: capitalize;
+}
+
+.description {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+ 
+.other-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+}
+
+.col i {
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.humidity, .wind {
+    font-size: 28px;
+    font-weight: 500;
+}
